@@ -1,4 +1,4 @@
-import 'package:coffeebreak/src/LoginScreen.dart';
+import 'package:coffeebreak/src/pages/LoginScreen.dart';
 import 'package:flutter/material.dart';
 
 void main(){

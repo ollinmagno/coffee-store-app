@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:coffeebreak/src/HomeScreen.dart';
+import 'package:coffeebreak/src/pages/HomeScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

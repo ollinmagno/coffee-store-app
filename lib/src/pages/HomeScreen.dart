@@ -1,4 +1,4 @@
-import 'package:coffeebreak/src/search_coffee.dart';
+import 'package:coffeebreak/src/widgets/search_coffee.dart';
 import 'package:coffeebreak/src/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
