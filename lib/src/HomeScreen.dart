@@ -17,8 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 40,),
             Text("Bem-vindo, User", style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold)),
             SizedBox(width: 140,),
-            IconButton(icon: Icon(Icons.account_circle, size: 36,),
-              onPressed: (){},
+            Container(
+              margin: EdgeInsets.all(8.0),
+              child: Icon((Icons.account_circle), size: 36),
             ),
           ],
         ),
