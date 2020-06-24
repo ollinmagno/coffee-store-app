@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:coffeebreak/src/HomeScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -100,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   inputUser('Usuário'),
                   inputPassword('Senha'),
                   SizedBox(height: 20,),
-                  button('Entrar'),
+                  button('Entrar', context),
 
                 ],
               ),
@@ -112,12 +112,9 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-button(String text) {
+button(String text, context) {
   return RaisedButton(
     color: Colors.amber,
-//    onPressed: () {
-//      Navigator.push(context, MaterialPageRoute(builder: (context) => ()));
-//    }
     child: SizedBox(
       width: 226,
       child: Container(
@@ -132,5 +129,8 @@ button(String text) {
         ),
       ),
     ),
+      onPressed: () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    }
   );
 }
