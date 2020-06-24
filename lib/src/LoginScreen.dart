@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:coffeebreak/src/HomeScreen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -61,27 +60,11 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: EdgeInsets.all(16.0),
           children: <Widget>[
             SizedBox(
-              height: 60,
+              height: 80,
             ),
-            Stack(
-              children: <Widget>[
-                Positioned(
-                  child: SvgPicture.asset(
-                    'assets/images/coffee-cup-1.svg',
-                    width: 224,
-                    height: 224,
-                  ),
-                ),
-                Positioned(
-                  left: 40,
-                  child: SvgPicture.asset(
-                    'assets/images/coffee-cup-2.svg',
-                    width: 224,
-                    height: 224,
-                  ),
-                ),
-              ],
-            ),
+
+            Image.asset('assets/images/coffee.png'),
+
             SizedBox(
               height: 40,
             ),
@@ -130,7 +113,7 @@ button(String text, context) {
       ),
     ),
       onPressed: () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
     }
   );
 }
