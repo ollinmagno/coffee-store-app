@@ -12,6 +12,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final _ctrlPassword = TextEditingController();
   GlobalKey _key = GlobalKey<FormState>();
 
+  Color colorLogin = Color(0xffbb7f67);
+
   inputUser(String text) {
     return TextFormField(
       controller: _ctrlUser,
@@ -74,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: EdgeInsets.all(16.0),
               margin: EdgeInsets.all(8.0),
               decoration: BoxDecoration(
-                color: Colors.brown.shade400,
+                color: colorLogin,
                 borderRadius: const BorderRadius.all(const Radius.circular(16.0)),
               ),
               child: Column(
