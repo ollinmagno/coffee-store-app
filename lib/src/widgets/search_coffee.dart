@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SearchCoffee extends StatelessWidget {
+  Color _cor = Color(0xfff8e7d3);
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: _cor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14),
         child: Row(
@@ -32,7 +33,7 @@ class SearchCoffee extends StatelessWidget {
               child: Text(
                 'Filtros',
                 style:
-                TextStyle(color: Colors.amber.shade600, fontWeight: FontWeight.bold),
+                TextStyle(color: Colors.black45, fontWeight: FontWeight.bold),
               ),
             ),
           ],

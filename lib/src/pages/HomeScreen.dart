@@ -8,63 +8,68 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Color _corBody = Color(0xfff8e7d3);
+
   _body() {
-    return ListView(
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            Padding(padding: EdgeInsets.all(8.0)),
-            SizedBox(height: 40,),
-            Text("Bem-vindo, User", style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold)),
-            SizedBox(width: 140,),
-            Container(
-              margin: EdgeInsets.all(8.0),
-              child: Icon((Icons.account_circle), size: 36),
+    return Container(
+      color: _corBody,
+      child: ListView(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Padding(padding: EdgeInsets.all(8.0)),
+              SizedBox(height: 40,),
+              Text("Bem-vindo, User", style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold)),
+              SizedBox(width: 140,),
+              Container(
+                margin: EdgeInsets.all(8.0),
+                child: Icon((Icons.account_circle), size: 36),
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+            Padding(padding:  EdgeInsets.all(8.0),),
+            Text('Qual café você deseja ?'),
+            ],
+          ),
+          SizedBox(height: 16.0,),
+          SearchCoffee(),
+          SizedBox(height: 16.0,),
+
+          Container(
+            height: 208.0,
+            margin: EdgeInsets.all(16.0),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                _image('assets/images/coffee-banner01.png'),
+                _space(16.0),
+                _image('assets/images/coffee-banner02.png'),
+                _space(16.0),
+                _image('assets/images/coffee-banner03.png'),
+                _space(16.0),
+              ],
             ),
-          ],
-        ),
-        Row(
-          children: <Widget>[
-          Padding(padding:  EdgeInsets.all(8.0),),
-          Text('Qual café você deseja ?'),
-          ],
-        ),
-        SizedBox(height: 16.0,),
-        SearchCoffee(),
-        SizedBox(height: 16.0,),
-
-        Container(
-          height: 208.0,
-          margin: EdgeInsets.all(16.0),
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              _image('assets/images/coffee-banner01.png'),
-              _space(16.0),
-              _image('assets/images/coffee-banner02.png'),
-              _space(16.0),
-              _image('assets/images/coffee-banner03.png'),
-              _space(16.0),
-            ],
           ),
-        ),
 
-        Container(
-          height: 208.0,
-          margin: EdgeInsets.all(16.0),
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              _image('assets/images/coffee-banner04.png'),
-              _space(16.0),
-              _image('assets/images/coffee-banner07.png'),
-              _space(16.0),
-              _image('assets/images/coffee-banner06.png'),
-              _space(16.0),
-            ],
+          Container(
+            height: 208.0,
+            margin: EdgeInsets.all(16.0),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                _image('assets/images/coffee-banner04.png'),
+                _space(16.0),
+                _image('assets/images/coffee-banner07.png'),
+                _space(16.0),
+                _image('assets/images/coffee-banner06.png'),
+                _space(16.0),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
   _space(num size){
