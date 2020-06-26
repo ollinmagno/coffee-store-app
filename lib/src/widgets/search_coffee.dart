@@ -13,7 +13,7 @@ class SearchCoffee extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(8.0),
                   color: Colors.grey.shade100,
                 ),
                 child: TextField(
@@ -22,14 +22,14 @@ class SearchCoffee extends StatelessWidget {
                     border: InputBorder.none,
                     prefixIcon: Icon(
                       Icons.search,
-                      color: Colors.amber.shade600,
+                      color: Colors.black45,
                     ),
                   ),
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 12),
+              margin: EdgeInsets.only(left: 16.0),
               child: Text(
                 'Filtros',
                 style:

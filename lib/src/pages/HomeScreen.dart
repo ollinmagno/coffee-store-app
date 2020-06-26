@@ -37,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SearchCoffee(),
           SizedBox(height: 16.0,),
 
+
           Container(
             height: 208.0,
             margin: EdgeInsets.all(16.0),
