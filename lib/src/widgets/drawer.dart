@@ -26,7 +26,7 @@ class DrawerList extends StatelessWidget {
 
               ListTile(
                   title: Text('Encontrar'),
-                  subtitle: Text('cafeterias próximas'),
+                  subtitle: Text('Cafeterias próximas'),
                   trailing: Icon(Icons.map),
                   onTap: () {
                     print('');
@@ -45,7 +45,7 @@ class DrawerList extends StatelessWidget {
               Divider(color: Colors.black38),
               ListTile(
                   title: Text('Café'),
-                  leading: Image.asset('assets/images/items/cup-coffee01.png'),
+                  leading: Image.asset('assets/images/items/cup-coffee01.png', height: 40),
                   onTap: () {
                     print('Item 1');
                     Navigator.pop(context);
@@ -53,7 +53,7 @@ class DrawerList extends StatelessWidget {
               ),
               Divider(color: Colors.black38),
               ListTile(
-                  leading: Image.asset('assets/images/items/cup-coffee02.png', height: 40),
+                  leading: Image.asset('assets/images/items/cup-coffee02.png', height: 36),
                   title: Text('Capuchino'),
                   trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
