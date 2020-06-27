@@ -47,7 +47,7 @@ class DrawerList extends StatelessWidget {
               Divider(color: Colors.black38),
               ListTile(
                   leading: Image.asset('assets/images/items/cup-coffee01.png', width: 55,),
-                  title: Text('Café'),
+                  title: Text('Café', textAlign: TextAlign.center),
                   trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
                     print('Item 1');
@@ -57,7 +57,7 @@ class DrawerList extends StatelessWidget {
               Divider(color: Colors.black38),
               ListTile(
                   leading: Image.asset('assets/images/items/cup-coffee02.png', width: 55),
-                  title: Text('Capuchino'),
+                  title: Text('Capuchino', textAlign: TextAlign.center),
                   trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
                     print('Item 2');
@@ -67,7 +67,7 @@ class DrawerList extends StatelessWidget {
               Divider(color: Colors.black38),
               ListTile(
                   leading: Image.asset('assets/images/items/cup-coffee03.png', height: 44, width: 62),
-                  title: Text('Expresso'),
+                  title: Text('Expresso', textAlign: TextAlign.center),
                   trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
                     print('Item 3');
@@ -77,7 +77,7 @@ class DrawerList extends StatelessWidget {
               Divider(color: Colors.black38),
               ListTile(
                   leading: Image.asset('assets/images/items/cup-coffee07.png', height: 52, width: 62),
-                  title: Text('Mocha'),
+                  title: Text('Mocha', textAlign: TextAlign.center),
                   trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
                     print('Item 4');
@@ -85,15 +85,15 @@ class DrawerList extends StatelessWidget {
                   }
               ),
               Divider(color: Colors.black38),
-//              ListTile(
-//                  leading: Icon(Icons.cake,),
-//                  title: Text(''),
-//                  trailing: Icon(Icons.keyboard_arrow_right),
-//                  onTap: () {
-//                    print('Item 5');
-//                    Navigator.pop(context);
-//                  }
-//              ),
+              SizedBox(height: 40,),
+              ListTile(
+                  title: Text('Sair do app', style: TextStyle(color: Colors.red,
+                      fontSize: 16.0, fontWeight: FontWeight.w400),),
+                  onTap: () {
+                    print('sair...');
+                    Navigator.pop(context);
+                  }
+              ),
             ],
           ),
         ),
