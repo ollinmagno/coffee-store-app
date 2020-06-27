@@ -1,3 +1,5 @@
+import 'package:coffeebreak/src/pages/coffee_consumption.dart';
+import 'package:coffeebreak/src/pages/find_on_map.dart';
 import 'package:flutter/material.dart';
 
 class DrawerList extends StatelessWidget {
@@ -30,7 +32,7 @@ class DrawerList extends StatelessWidget {
                   trailing: Icon(Icons.map),
                   onTap: () {
                     print('');
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => FindOnMap()));
                   }
               ),
               Divider(color: Colors.black38),
@@ -39,13 +41,14 @@ class DrawerList extends StatelessWidget {
                   trailing: Icon(Icons.insert_chart, color: Colors.green,),
                   onTap: () {
                     print('');
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CoffeeConsumption()));
                   }
               ),
               Divider(color: Colors.black38),
               ListTile(
+                  leading: Image.asset('assets/images/items/cup-coffee01.png', width: 55,),
                   title: Text('Café'),
-                  leading: Image.asset('assets/images/items/cup-coffee01.png', height: 40),
+                  trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
                     print('Item 1');
                     Navigator.pop(context);
@@ -53,7 +56,7 @@ class DrawerList extends StatelessWidget {
               ),
               Divider(color: Colors.black38),
               ListTile(
-                  leading: Image.asset('assets/images/items/cup-coffee02.png', height: 36),
+                  leading: Image.asset('assets/images/items/cup-coffee02.png', width: 55),
                   title: Text('Capuchino'),
                   trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
@@ -63,7 +66,7 @@ class DrawerList extends StatelessWidget {
               ),
               Divider(color: Colors.black38),
               ListTile(
-                  leading: Image.asset('assets/images/items/cup-coffee03.png', height: 40),
+                  leading: Image.asset('assets/images/items/cup-coffee03.png', height: 44, width: 62),
                   title: Text('Expresso'),
                   trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
@@ -73,7 +76,7 @@ class DrawerList extends StatelessWidget {
               ),
               Divider(color: Colors.black38),
               ListTile(
-                  leading: Icon(Icons.cake,),
+                  leading: Image.asset('assets/images/items/cup-coffee07.png', height: 52, width: 62),
                   title: Text('Mocha'),
                   trailing: Icon(Icons.keyboard_arrow_right),
                   onTap: () {
