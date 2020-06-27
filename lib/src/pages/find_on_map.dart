@@ -15,7 +15,7 @@ class _FindOnMapState extends State<FindOnMap> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.amber.shade600,
-        title: Text('Coffee Store'),
+        title: Text('Procurar...'),
         centerTitle: true,
       ),
       body: _body(),
