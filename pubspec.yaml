@@ -55,6 +55,13 @@ flutter:
   - assets/images/items/cup-coffee01.png
   - assets/images/items/cup-coffee02.png
   - assets/images/items/cup-coffee03.png
+  - assets/images/items/cup-coffee04.png
+  - assets/images/items/cup-coffee05.png
+  - assets/images/items/cup-coffee06.png
+  - assets/images/items/cup-coffee07.png
+  - assets/images/items/cup-coffee08.png
+  - assets/images/items/cup-coffee09.png
+  - assets/images/items/cup-coffee10.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
