@@ -1,3 +1,5 @@
+import 'package:coffeebreak/src/pages/bottom_navigation.dart';
+import 'package:coffeebreak/src/widgets/column_banner.dart';
 import 'package:coffeebreak/src/widgets/search_coffee.dart';
 import 'package:coffeebreak/src/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -37,35 +39,32 @@ class _HomeScreenState extends State<HomeScreen> {
           SearchCoffee(),
           SizedBox(height: 16.0,),
 
-
           Container(
-            height: 208.0,
-            margin: EdgeInsets.all(16.0),
+            height: 180.0,
+            margin: EdgeInsets.only(top: 16.0, left: 12.0, right: 12.0),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                _image('assets/images/coffee-banner01.png'),
-                _space(16.0),
-                _image('assets/images/coffee-banner02.png'),
-                _space(16.0),
-                _image('assets/images/coffee-banner03.png'),
-                _space(16.0),
+                ColumnBanner(img: 'assets/images/coffee-banner01.png', text: 'Text exemplo'),
+                SizedBox(width: 12,),
+                ColumnBanner(img: 'assets/images/coffee-banner02.png', text: 'Text exemplo'),
+                SizedBox(width: 12,),
+                ColumnBanner(img: 'assets/images/coffee-banner03.png', text: 'Text exemplo'),
               ],
             ),
           ),
 
           Container(
-            height: 208.0,
-            margin: EdgeInsets.all(16.0),
+            height: 180.0,
+            margin: EdgeInsets.only(top: 16.0, left: 12.0, right: 12.0),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                _image('assets/images/coffee-banner04.png'),
-                _space(16.0),
-                _image('assets/images/coffee-banner07.png'),
-                _space(16.0),
-                _image('assets/images/coffee-banner06.png'),
-                _space(16.0),
+                ColumnBanner(img: 'assets/images/coffee-banner04.png', text: 'Text exemplo'),
+                SizedBox(width: 12,),
+                ColumnBanner(img: 'assets/images/coffee-banner06.png', text: 'Text exemplo'),
+                SizedBox(width: 12,),
+                ColumnBanner(img: 'assets/images/coffee-banner07.png', text: 'Text exemplo'),
               ],
             ),
           ),
@@ -73,14 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-  _space(num size){
-    return SizedBox(width: 16.0);
-  }
 
   _image(String img){
     return ClipRRect(
-      borderRadius: BorderRadius.circular(16.0),
-      child: Image.asset(img),
+      borderRadius: BorderRadius.circular(8.0),
+      child: Image.asset(img, height: 160,),
     );
   }
 
