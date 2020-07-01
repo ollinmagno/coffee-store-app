@@ -1,6 +1,7 @@
 import 'package:coffeebreak/src/pages/bottom_navigation.dart';
 import 'package:coffeebreak/src/widgets/column_banner.dart';
 import 'package:coffeebreak/src/widgets/search_coffee.dart';
+import 'package:coffeebreak/src/utils/colors.dart';
 import 'package:coffeebreak/src/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -10,11 +11,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Color _corBody = Color(0xfff8e7d3);
 
   _body() {
     return Container(
-      color: _corBody,
+      color: bodyColor,
       child: ListView(
         children: <Widget>[
           Row(
