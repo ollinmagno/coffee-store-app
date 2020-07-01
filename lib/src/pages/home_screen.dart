@@ -53,7 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-
           Container(
             height: 180.0,
             margin: EdgeInsets.only(top: 16.0, left: 12.0, right: 12.0),
@@ -70,13 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-    );
-  }
-
-  _image(String img){
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(8.0),
-      child: Image.asset(img, height: 160,),
     );
   }
 
