@@ -8,18 +8,39 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _ctrlUser = TextEditingController();
-  final _ctrlPassword = TextEditingController();
-  GlobalKey _key = GlobalKey<FormState>();
+  final _controllerUser = TextEditingController();
+  final _controllerPassword = TextEditingController();
+  final _key = GlobalKey<FormState>();
+  final focusNode = FocusNode();
 
   Color colorLogin = Color(0xffbb7f67);
 
+  _validateLogin() {
+    _validate();
+    String user = _controllerUser.text;
+    String password = _controllerPassword.text;
+    print('$user, $password');
+
+  }
+
+  _validate() {
+    if (!_key.currentState.validate()) {
+      return;
+    }
+  }
+
   inputUser(String text) {
     return TextFormField(
-      controller: _ctrlUser,
+      controller: _controllerUser,
       autofocus: true,
       maxLines: 1,
       keyboardType: TextInputType.text,
+      validator: (String user) {
+        if (user.isEmpty) {
+          return 'Informe seu usuário';
+        }
+        return null; 
+      },
       decoration: InputDecoration(
         labelText: text,
         labelStyle: TextStyle(
@@ -32,14 +53,22 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  inputPassword(String text) {
+  inputPassword(String text, {Function validator}) {
     return TextFormField(
-      controller: _ctrlPassword,
+      controller: _controllerPassword,
       autofocus: true,
       obscureText: true,
       maxLines: 1,
       maxLength: 20,
       keyboardType: TextInputType.text,
+      validator: (String password) {
+        if (password.isEmpty) {
+          return 'Informe sua senha';
+        } else if (password.length < 6) {
+          return 'Senha incorreta';
+        }
+        return null;
+      },
       decoration: InputDecoration(
         labelText: text,
         labelStyle: TextStyle(
@@ -64,29 +93,29 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 80,
             ),
-
             Image.asset('assets/images/coffee.png'),
-
             SizedBox(
               height: 40,
             ),
             Container(
               width: 120,
-              height: 256,
+              height: 300,
               padding: EdgeInsets.all(16.0),
               margin: EdgeInsets.all(8.0),
               decoration: BoxDecoration(
                 color: colorLogin,
-                borderRadius: const BorderRadius.all(const Radius.circular(16.0)),
+                borderRadius:
+                    const BorderRadius.all(const Radius.circular(16.0)),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   inputUser('Usuário'),
                   inputPassword('Senha'),
-                  SizedBox(height: 20,),
-                  button('Entrar', context),
-
+                  SizedBox(
+                    height: 20,
+                  ),
+                  _button('Entrar', context, onPressed: _validateLogin),
                 ],
               ),
             ),
@@ -97,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-button(String text, context) {
+_button(String text, context, {Function onPressed}) {
   return RaisedButton(
     color: Colors.amber,
     child: SizedBox(
@@ -114,8 +143,6 @@ button(String text, context) {
         ),
       ),
     ),
-      onPressed: () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-    }
+    onPressed: onPressed,
   );
 }
