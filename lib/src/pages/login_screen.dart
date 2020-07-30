@@ -11,7 +11,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _controllerUser = TextEditingController();
   final _controllerPassword = TextEditingController();
   final _key = GlobalKey<FormState>();
-  final focusNode = FocusNode();
+  final _nextFocus = FocusNode();
 
   Color colorLogin = Color(0xffbb7f67);
 
@@ -29,7 +29,8 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  inputUser(String text) {
+  inputUser(String text, {Function validator,
+  FocusNode nextFocus}) {
     return TextFormField(
       controller: _controllerUser,
       autofocus: true,
@@ -40,6 +41,11 @@ class _LoginScreenState extends State<LoginScreen> {
           return 'Informe seu usuário';
         }
         return null; 
+      },
+      onFieldSubmitted: (String text) {
+        if (nextFocus != null) {
+          FocusScope.of(context).requestFocus(nextFocus);
+        }
       },
       decoration: InputDecoration(
         labelText: text,
@@ -53,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  inputPassword(String text, {Function validator}) {
+  inputPassword(String text, {Function validator, FocusNode nextFocus}) {
     return TextFormField(
       controller: _controllerPassword,
       autofocus: true,
@@ -69,6 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
         }
         return null;
       },
+      focusNode: nextFocus,
       decoration: InputDecoration(
         labelText: text,
         labelStyle: TextStyle(
@@ -99,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Container(
               width: 120,
-              height: 300,
+              height: 290,
               padding: EdgeInsets.all(16.0),
               margin: EdgeInsets.all(8.0),
               decoration: BoxDecoration(
@@ -108,10 +115,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     const BorderRadius.all(const Radius.circular(16.0)),
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  inputUser('Usuário'),
-                  inputPassword('Senha'),
+                  inputUser('Usuário', nextFocus: _nextFocus,),
+                  inputPassword('Senha', nextFocus: _nextFocus),
                   SizedBox(
                     height: 20,
                   ),
@@ -130,7 +137,7 @@ _button(String text, context, {Function onPressed}) {
   return RaisedButton(
     color: Colors.amber,
     child: SizedBox(
-      width: 226,
+      width: double.infinity,
       child: Container(
         padding: EdgeInsets.all(8.0),
         height: 44,
