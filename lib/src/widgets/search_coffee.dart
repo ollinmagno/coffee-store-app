@@ -15,6 +15,14 @@ class SearchCoffee extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
                   color: Colors.grey.shade100,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 3,
+                      offset: Offset(2, 2),
+                    ),
+                  ]
                 ),
                 child: TextField(
                   decoration: InputDecoration(
